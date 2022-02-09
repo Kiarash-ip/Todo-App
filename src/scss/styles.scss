@@ -108,6 +108,7 @@ html {
 .todoItem__container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   border-bottom: 3px solid $primary-color;
   width: 100%;
   align-items: center;
@@ -117,6 +118,11 @@ html {
     color: $white-color;
     height: auto;
   }
+}
+
+.todoItem__text {
+  overflow-wrap: break-word;
+  max-width: 60%;
 }
 
 .compeleted__button {

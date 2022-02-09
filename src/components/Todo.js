@@ -7,7 +7,9 @@ export default function Todo({ text }) {
 
   return (
     <div className="todoItem__container">
-      <p>{completed ? <del>{text}</del> : text}</p>
+      <div className="todoItem__text">
+        <p>{completed ? <del>{text}</del> : text}</p>
+      </div>
       <div>
         {!completed && (
           <button
