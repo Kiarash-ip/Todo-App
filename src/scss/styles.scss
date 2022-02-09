@@ -1,0 +1,121 @@
+$primary-color: #21325e;
+$secondary-color: #3e497a;
+$third-color: #f1d00a;
+$white-color: #f0f0f0;
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin buttons {
+  padding: 5px 10px;
+  border: 2px solid $white-color;
+  border-radius: 10px;
+  background-color: $third-color;
+  font-weight: bold;
+  color: $white-color;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: darken($third-color, 3%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-color: $primary-color;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoApp-container {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  min-height: 500px;
+  background-color: $secondary-color;
+  border-radius: 5px;
+}
+
+.addTodo__input--Container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: $secondary-color;
+  height: 60px;
+  padding: 40px 0;
+  border-bottom: 20px solid $primary-color;
+
+  input {
+    margin-left: 20px;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid $third-color;
+    padding: 10px;
+    font-size: large;
+    background-color: $white-color;
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: darken($third-color, 5%);
+      background-color: #fff;
+    }
+  }
+
+  button {
+    margin-left: auto;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    background-color: $third-color;
+    color: $white-color;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 16px;
+
+    &:hover {
+      background-color: darken($third-color, 3%);
+    }
+  }
+}
+
+.todoList__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.todoItem__container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid $primary-color;
+  width: 100%;
+  align-items: center;
+  padding: 20px 10px;
+
+  p {
+    color: $white-color;
+    height: auto;
+  }
+}
+
+.compeleted__button {
+  @include buttons();
+}
+
+.delete__button {
+  margin-left: 10px;
+  @include buttons();
+}

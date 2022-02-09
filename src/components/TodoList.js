@@ -6,7 +6,7 @@ export default function TodoList() {
   const { state } = useContext(todosContext);
 
   return (
-    <div>
+    <div className="todoList__container">
       {state?.todos.map((todo) => (
         <Todo key={todo.id} text={todo.text} />
       ))}

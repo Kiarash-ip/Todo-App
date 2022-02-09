@@ -5,15 +5,16 @@ export default function AddTodo() {
   const [state, setState] = useState("");
   const { dispatch } = useContext(todosContext);
 
-  const addTodokHandler = () => {
+  const addTodokHandler = (e) => {
+    e.preventDefault();
     dispatch({ type: "ADD-TODO", payload: state });
     setState("");
   };
 
   return (
     <div>
-      <div>
-        <form>
+      <div className="addTodo__input--Container">
+        <form onSubmit={addTodokHandler}>
           <input
             type="text"
             value={state}

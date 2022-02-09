@@ -30,8 +30,6 @@ const reducer = (state, action) => {
 export default function TodosProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log(state);
-
   return (
     <todosContext.Provider value={{ state, dispatch }}>
       {children}
