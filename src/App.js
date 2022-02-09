@@ -8,6 +8,7 @@ function App() {
     <TodosProvider>
       <div className="App">
         <div className="todoApp-container">
+          <h1>Todo App</h1>
           <AddTodo />
           <TodoList />
         </div>
