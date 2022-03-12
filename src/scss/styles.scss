@@ -79,21 +79,44 @@ html {
   }
 
   button {
+    all: unset;
+    position: relative;
     margin-left: auto;
     margin-right: 20px;
-    outline: none;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 20px;
+    padding: 15px 20px;
     font-weight: bold;
-    background-color: $third-color;
-    color: $white-color;
-    cursor: pointer;
-    transition: all 0.2s ease;
     font-size: 16px;
+    z-index: 1;
+    color: #fff;
 
-    &:hover {
-      background-color: darken($third-color, 3%);
+    &:hover::after {
+      transform: scale(1.15);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: 15px;
+    }
+
+    &::before {
+      content: "";
+      background-color: #333;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      background-image: linear-gradient(
+        to bottom right,
+        rgb(0, 255, 136),
+        rgb(174, 0, 255)
+      );
+      z-index: -2;
+      transition: transform 0.2s ease-in-out;
     }
   }
 }
@@ -113,16 +136,16 @@ html {
   width: 100%;
   align-items: center;
   padding: 20px 10px;
-
-  p {
-    color: $white-color;
-    height: auto;
-  }
 }
 
 .todoItem__text {
   overflow-wrap: break-word;
   max-width: 60%;
+
+  p {
+    color: $white-color;
+    height: auto;
+  }
 }
 
 .compeleted__button {

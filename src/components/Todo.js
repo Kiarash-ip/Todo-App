@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { todosContext } from "../context/TodosProvider";
+import PropTypes from "prop-types";
 
 export default function Todo({ text }) {
   const { dispatch } = useContext(todosContext);
@@ -29,3 +30,7 @@ export default function Todo({ text }) {
     </div>
   );
 }
+
+Todo.propTypes = {
+  text: PropTypes.string.isRequired,
+};
